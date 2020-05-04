@@ -1,15 +1,18 @@
 class Computer:
-    def __init__(self, manufacturer, model, price):
+
+    def __init__(self, manufacturer, model, price_as_advertised, motherboard, ram):
 
         self.manufacturer = manufacturer
         self.model = model
-        self.price = price
+        self.motherboard = motherboard
+        self.ram = ram
+        self.price_as_advertised = price_as_advertised
 
     def __str__(self):
-        return self.manufacturer.ljust(10)+self.model.ljust(10)+self.price.ljust(10)
+        return self.manufacturer.ljust(10)+self.model.ljust(10)+self.price_as_advertised.ljust(10)
 
     def __repr__(self):
-        return "Manufacturer: ".ljust(20)+self.manufacturer.ljust(10)+"\n"+ "Model: ".ljust(20)+self.model.ljust(10)+"\n"+ "Price: ".ljust(20)+self.price.ljust(10)
+        return "Manufacturer: ".ljust(20)+self.manufacturer.ljust(10)+"\n"+ "Model: ".ljust(20)+self.model.ljust(10)+"\n"+ "Price: ".ljust(20)+self.price_as_advertised.ljust(10)
 
     def __iter__(self):
         for i in self.__dict__:
@@ -32,14 +35,9 @@ class Computer:
         self.__model = model
 
     @property
-    def price(self):
-        return self.__price
+    def price_as_advertised(self):
+        return self.__price_as_advertised
 
-    @price.setter
-    def price(self, price):
-        if int(price) > 10:
-            self.__price = price
-        elif price == 5:
-            self.__price = None
-        else:
-            self.__price = 0
+    @price_as_advertised.setter
+    def price_as_advertised(self, price_as_advertised):
+        self.__price_as_advertised = price_as_advertised
