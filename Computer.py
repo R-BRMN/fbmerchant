@@ -1,9 +1,9 @@
-class Computer:
+from Product import *
 
-    def __init__(self, manufacturer, model, price_as_advertised, motherboard, ram):
+class Computer(Product):
 
-        self.manufacturer = manufacturer
-        self.model = model
+    def __init__(self, price_as_advertised, motherboard, ram):
+
         self.motherboard = motherboard
         self.ram = ram
         self.price_as_advertised = price_as_advertised
