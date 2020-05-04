@@ -1,12 +1,14 @@
 #!/bin/python
-
-from Computer import *
-from Owner import *
-from Product import *
+from pcmerchant.Computer import *
+from pcmerchant.Owner import *
+from pcmerchant.Product import *
 
 def main():
 
-    c1 = Computer("Lenovo", "x230", "550")
+    print ("alright")
+    print (Computer)
+
+    c1 = Computer("Lenovo", "x230", "650")
     c2 = Computer("Lenovo", "x400", "250")
     c3 = Computer("Dell", "9370", "1200")
     c4 = Computer("Microsoft", "XBOX", "200")
