@@ -28,5 +28,5 @@ class Owner:
     def computers(self, computers):
         self.__computers = computers
 
-    def add_computer(self, computer: Computer):
+    def add_computer(self, computer):
         self.computers.append(computer)

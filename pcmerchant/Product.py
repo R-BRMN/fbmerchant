@@ -12,6 +12,9 @@ class Product:
         self.url = url
         self.available = True
 
+    def __repr__(self):
+        return f"{self.name.ljust(20)}"
+
     @property
     def name(self):
         return self.__name
@@ -54,9 +57,6 @@ class Product:
     @available.setter
     def available(self, available):
         self.__available = available
-
-    def __repr__(self):
-        return str(self.__dict__)
 
     def markUnavailable(self):
         self.__available = False

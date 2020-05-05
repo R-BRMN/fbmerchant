@@ -1,20 +1,28 @@
-lass Computer():
+from .Product import *
 
-    def __init__(self, price_as_advertised, motherboard, ram):
+class Computer(Product):
+    REPR_COLUMNS = [20,30,5]
 
-        self.motherboard = motherboard
-        self.ram = ram
-        self.price_as_advertised = price_as_advertised
+    def __init__(self, name, price_as_advertised, owner, **specs):
 
-    def __str__(self):
-        return self.manufacturer.ljust(10)+self.model.ljust(10)+self.price_as_advertised.ljust(10)
+        super().__init__(name, price_as_advertised, None, None)
+        self.specs = specs
 
-    def __repr__(self):
-        return "Manufacturer: ".ljust(20)+self.manufacturer.ljust(10)+"\n"+ "Model: ".ljust(20)+self.model.ljust(10)+"\n"+ "Price: ".ljust(20)+self.price_as_advertised.ljust(10)
-
-    def __iter__(self):
-        for i in self.__dict__:
-            yield self.__dict__[i]
+#    def __repr__(self):
+#        repr_str = ''
+#        table_data = list()
+#
+#        table_data.append(['','NAME','PRICE'])
+#
+#        for spec in self.specs:
+#            table_data.append([spec.upper(), self.specs[spec]])
+#
+#        for row in table_data:
+#            for col in range(len(row)):
+#                repr_str += row[col].ljust(self.REPR_COLUMNS[col])
+#            repr_str += '\n'
+#        
+#        return repr_str
 
     @property
     def manufacturer(self):
@@ -39,3 +47,4 @@ lass Computer():
     @price_as_advertised.setter
     def price_as_advertised(self, price_as_advertised):
         self.__price_as_advertised = price_as_advertised
+
